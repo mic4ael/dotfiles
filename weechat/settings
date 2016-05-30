@@ -1,0 +1,6 @@
+/script install buffers.pl
+/script install iset.pl
+/script install notify.py
+/script install notification_center.py
+/script install colorize_nicks.py
+/filter add irc_smart * irc_smart_filter *
