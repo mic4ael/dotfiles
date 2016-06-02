@@ -22,8 +22,9 @@ antigen theme gnzh
 antigen apply
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
+export PATH=/usr/local/bin:$PATH
 
-for f in $(find . --depth 1 -name "*.zsh");
+for f in $(find ~/.dotfiles/zsh -depth 1 -name "*.zsh");
 do
     source $f;
 done;

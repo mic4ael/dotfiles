@@ -3,30 +3,24 @@
 OS=$(uname)
 
 print_title() {
-    echo "\n"
-    echo "=============== $1 ==============="
+    echo "=============== $1 ===============";
 }
 
-print_title "Creating .dotfiles folder"
+print_title "Initializing git submodules";
+git submodule init;
 
-install_tmux_conf() {
-    ln -s "$(pwd)/tmux/tmux.conf" "$HOME/.tmux.conf"
-}
+print_title "Linking to ~/.dotfiles";
+cp -r . $HOME/.dotfiles;
 
-install_vim_conf() {
-    ln -s "$(pwd)/vim/vimrc" "$HOME/.vimrc"
-}
+print_title "Linking ZSH configuration";
+ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc;
 
-install_git_conf() {
-    ln -s "$(pwd)/git/gitconfig" "$HOME/.gitconfig"
-    ln -s "$(pwd)/git/gitignore" "$HOME/.gitignore"
-}
+print_title "Linking VIM configuration"
+ln -s $HOME/.dotfiles/vim/vimrc $HOME/.vimrc;
 
-print_title "Installing TMUX"
-install_tmux_conf
+print_title "Linking TMUX configuration";
+ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf;
 
-print_title "Installing VIM"
-install_vim_conf
-
-print_title "Installing GIT conf"
-install_git_conf
+print_title "Linking GIT config";
+ln -s $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig;
+ln -s $HOME/.dotfiles/git/gitignore $HOME/.gitignore;
