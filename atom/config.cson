@@ -1,0 +1,46 @@
+"*":
+  "atom-beautify":
+    _analyticsUserId: "d8a3611f-2935-4a11-be3a-4e506be16dda"
+  "atom-ctags":
+    autoBuildTagsWhenActive: true
+    buildTimeout: 9999999
+    cmdArgs: '''
+      -R --exclude="node_modules" --exclude="ext_modules" --exclude="migrations" --exclude="indico.egg-info" --exclude=".idea" --exclude="htmlcov" --exclude="bin" --exclude="build" --exclude=".*" --exclude="dist" \\
+      --exclude="doc" --exclude="etc" --exclude="*.scss" --exclude="*.css" --exclude="indico/MaKaC"
+    '''
+  core:
+    disabledPackages: [
+      "expand-selection-to-quotes"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "*.pyc"
+    ]
+  editor:
+    autoIndentOnPaste: false
+    invisibles: {}
+    preferredLineLength: 120
+    showIndentGuide: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "397e3165-e737-7138-35ac-370e8ac86115"
+  "git-plus":
+    numberOfCommitsToShow: 50
+  "linter-pep8":
+    maxLineLength: 120
+  "project-manager":
+    closeCurrent: true
+  tasks: {}
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
+".diff.source":
+  editor:
+    preferredLineLength: 120
+    tabLength: 4

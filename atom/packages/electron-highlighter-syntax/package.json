@@ -1,0 +1,40 @@
+{
+  "name": "electron-highlighter-syntax",
+  "theme": "syntax",
+  "version": "1.2.0",
+  "description": "A tweaked one-dark syntax with Spacegray background",
+  "keywords": [
+    "syntax",
+    "theme",
+    "spacegray",
+    "dark"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmcbride1007/electron-highlighter-syntax.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "readme": "# electron-highlighter-syntax theme\n\nA syntax theme based off of One Dark with some minor adjustments and a Spacegray editor background\n\n![screenshot](https://cloud.githubusercontent.com/assets/6248612/12999836/24a74f04-d119-11e5-9b66-defbdcdfc1e7.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/mmcbride1007/electron-highlighter-syntax/issues"
+  },
+  "homepage": "https://github.com/mmcbride1007/electron-highlighter-syntax#readme",
+  "_id": "electron-highlighter-syntax@1.2.0",
+  "_shasum": "0016d5ea444da1e2d0ec26ff40e8267ab5a453c1",
+  "_resolved": "file:../d-116314-18810-a98trp/package.tgz",
+  "_from": "../d-116314-18810-a98trp/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
