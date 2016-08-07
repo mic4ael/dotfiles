@@ -11,8 +11,6 @@ brew install cairo;
 brew install cmake;
 brew install cscope;
 brew install ctags;
-brew install docker;
-brew install docker-machine;
 brew install enchant;
 brew install fontconfig;
 brew install freetype;
