@@ -28,3 +28,24 @@ for f in $(find ~/.dotfiles/zsh -depth 1 -name "*.zsh");
 do
     source $f;
 done;
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+source /Users/mic4ael/Library/Python/2.7/bin/virtualenvwrapper.sh;
+
+man() {
+        env \
+            LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+            LESS_TERMCAP_md=$(printf "\e[1;31m") \
+            LESS_TERMCAP_me=$(printf "\e[0m") \
+            LESS_TERMCAP_se=$(printf "\e[0m") \
+            LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+            LESS_TERMCAP_ue=$(printf "\e[0m") \
+            LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
+}
+
+export HISTCONTROL=ignoreboth:erasedups;
+
+alias ipython='ipython --profile=mic4ael'
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export LANG=en_US.UTF-8;
