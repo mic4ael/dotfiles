@@ -144,6 +144,7 @@ brew install zsh;
 # Brew Cask
 brew cask install cinch;
 brew cask install evernote;
+brew cask install firefox;
 brew cask install garmin-express;
 brew cask install google-chrome;
 brew cask install google-drive;
@@ -156,6 +157,7 @@ brew cask install qt-creator;
 brew cask install spotify;
 brew cask install steam;
 brew cask install the-unarchiver;
+brew cask install toggldesktop;
 brew cask install transmission;
 brew cask install tunnelblick;
 brew cask install virtualbox;
