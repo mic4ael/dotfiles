@@ -1,6 +1,5 @@
 #!/bin/bash;
 
-brew install asdf;
 brew install ansible;
 brew install asciinema;
 brew install asciinema2gif;
@@ -14,8 +13,8 @@ brew install fortune;
 brew install git;
 brew install gnome-icon-theme;
 brew install gnupg;
+brew install go;
 brew install gpg-agent;
-brew install gradle;
 brew install gtk+;
 brew install htop;
 brew install httpie;
@@ -29,7 +28,6 @@ brew install libxml2;
 brew install libzip;
 brew install little-cms2;
 brew install macvim;
-brew install maven;
 brew install mcrypt;
 brew install mercurial;
 brew install midnight-commander;
