@@ -21,31 +21,48 @@ antigen theme gnzh
 # Tell antigen that you're done.
 antigen apply
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
-export PATH=/usr/local/sbin:/usr/local/bin:$PATH
-
 for f in $(find ~/.dotfiles/zsh -depth 1 -name "*.zsh");
 do
-    source $f;
+  source $f;
 done;
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-source /Users/mic4ael/Library/Python/2.7/bin/virtualenvwrapper.sh;
+if [ -e "$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh" ]
+then
+  source /Users/mic4ael/Library/Python/2.7/bin/virtualenvwrapper.sh;
+else
+  echo "virtualenvwrapper not installed!"
+fi
 
 man() {
-        env \
-            LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-            LESS_TERMCAP_md=$(printf "\e[1;31m") \
-            LESS_TERMCAP_me=$(printf "\e[0m") \
-            LESS_TERMCAP_se=$(printf "\e[0m") \
-            LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-            LESS_TERMCAP_ue=$(printf "\e[0m") \
-            LESS_TERMCAP_us=$(printf "\e[1;32m") \
-        man "$@"
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+  man "$@"
 }
 
-export HISTCONTROL=ignoreboth:erasedups;
+if [ -d "${HOME}/.asdf/" ]
+then
+  source $HOME/.asdf/asdf.sh;
+  source $HOME/.asdf/completions/asdf.bash;
+else
+  echo "ASDF not installed!"
+fi
+
+if [ ! -d "$HOME/bin" ]
+then
+  mkdir -p "$HOME/bin"
+  cp .dotfiles/scripts/* "$HOME/bin"
+fi
 
 alias ipython='ipython --profile=mic4ael'
-export PATH="/usr/local/opt/gettext/bin:$PATH"
-export LANG=en_US.UTF-8;
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
+export HISTCONTROL=ignoreboth:erasedups;
+export PATH="${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/gettext/bin:$PATH"
+export LANG=en_US.UTF-8
