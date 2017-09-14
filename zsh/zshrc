@@ -27,12 +27,6 @@ do
 done;
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-if [ -e "$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh" ]
-then
-  source /Users/mic4ael/Library/Python/2.7/bin/virtualenvwrapper.sh;
-else
-  echo "virtualenvwrapper not installed!"
-fi
 
 man() {
   env \
@@ -60,9 +54,24 @@ then
   cp .dotfiles/scripts/* "$HOME/bin"
 fi
 
-alias ipython='ipython --profile=mic4ael'
+if [ ! -d "$HOME/go" ]
+then
+  mkdir -p "$HOME/go"
+fi
+
+export GOPATH=$HOME/go
+export PATH="${HOME}/.local/bin:${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/gettext/bin:$PATH"
+
+if ! type pipsi > /dev/null
+then
+  curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python
+  pipsi install pew ipython
+fi
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 export HISTCONTROL=ignoreboth:erasedups;
-export PATH="${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/gettext/bin:$PATH"
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+source $(pew shell_config)
+alias ipython='ipython --profile=mic4ael'
