@@ -1,21 +1,21 @@
 #!/bin/bash;
 
-brew install ansible;
+brew install adwaita-icon-theme;
 brew install asciinema;
 brew install asciinema2gif;
 brew install boost;
+brew install cloc;
 brew install cloog;
 brew install ctags;
 brew install curl;
 brew install dirmngr;
 brew install elixir;
 brew install erlang;
+brew install exercism;
 brew install flex;
 brew install fortune;
 brew install git;
-brew install gnome-icon-theme;
 brew install gnupg;
-brew install go;
 brew install gpg-agent;
 brew install gtk+;
 brew install htop;
@@ -27,6 +27,7 @@ brew install libidn;
 brew install libmpc@0.8;
 brew install libotr;
 brew install libxml2;
+brew install libyaml;
 brew install libzip;
 brew install little-cms2;
 brew install macvim;
@@ -42,6 +43,7 @@ brew install pidof;
 brew install portmidi;
 brew install pv;
 brew install pyenv-virtualenvwrapper;
+brew install python;
 brew install python3;
 brew install reattach-to-user-namespace;
 brew install sane-backends;
@@ -49,6 +51,7 @@ brew install sdl2;
 brew install sdl_image;
 brew install sdl_mixer;
 brew install sdl_ttf;
+brew install shared-mime-info;
 brew install ssh-copy-id;
 brew install the_silver_searcher;
 brew install tig;
@@ -62,8 +65,8 @@ brew install weechat;
 brew install wget;
 brew install zsh;
 
-
 # Brew Cask
+brew cask install adium;
 brew cask install cinch;
 brew cask install evernote;
 brew cask install firefox;
@@ -75,6 +78,7 @@ brew cask install java;
 brew cask install libreoffice;
 brew cask install mactex;
 brew cask install middleclick;
+brew cask install paintbrush;
 brew cask install spotify;
 brew cask install steam;
 brew cask install the-unarchiver;
@@ -85,6 +89,7 @@ brew cask install virtualbox;
 brew cask install visual-studio-code;
 brew cask install vlc;
 brew cask install wireshark;
+
 
 brew linkapps;
 brew cleanup;
