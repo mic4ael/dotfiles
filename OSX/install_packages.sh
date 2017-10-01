@@ -68,6 +68,7 @@ brew install zsh;
 # Brew Cask
 brew cask install adium;
 brew cask install cinch;
+brew cask install etcher;
 brew cask install evernote;
 brew cask install firefox;
 brew cask install garmin-express;
