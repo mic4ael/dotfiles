@@ -57,7 +57,7 @@ export PATH="${HOME}/.local/bin:${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/
 if ! type pipsi > /dev/null
 then
   curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python
-  pipsi install pew ipython
+  pipsi install pipenv ipython flake8
 fi
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
@@ -65,5 +65,4 @@ export HISTCONTROL=ignoreboth:erasedups;
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-source $(pew shell_config)
 alias ipython='ipython --profile=mic4ael'
