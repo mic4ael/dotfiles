@@ -8,4 +8,7 @@
 
 /server add freenode chat.freenode.net
 /set irc.server.freenode.autoconnect on
-
+/set irc.server.freenode.username "mic4ael"
+/set irc.server.freenode.sasl_username "mic4ael"
+/set irc.server.freenode.sasl_password {my password}
+/set irc.server.freenode.autojoin "#git,#pocoo,#english,#indico"
