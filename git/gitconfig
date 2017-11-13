@@ -114,6 +114,7 @@
     autocrlf = false
     editor = vim
     excludesfile = ~/.gitignore
+    pager = less -X -F
 [advice]
     statusHints = false
 [diff]
@@ -130,3 +131,6 @@
 [user]
     email = crossner90@gmail.com
     name = mic4ael
+[rebase]
+    autosquash = true
+    autostash = true
