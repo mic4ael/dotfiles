@@ -46,6 +46,7 @@ brew install pyenv-virtualenvwrapper;
 brew install python;
 brew install python3;
 brew install reattach-to-user-namespace;
+brew install ripgrep;
 brew install sane-backends;
 brew install sdl2;
 brew install sdl_image;
