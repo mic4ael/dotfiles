@@ -1,0 +1,33 @@
+- hosts: all
+  vars:
+    - user: root
+  tasks:
+    - name: Initializing git submodules
+      shell: git submodule init
+    - name: Linking zsh configuration
+      file: src={{ playbook_dir }}/zsh/zshrc dest={{ ansible_env.HOME }}/.zshrc state=link owner={{ user }}
+    - name: Linking vim configuration
+      file: src={{ playbook_dir }}/vim/vimrc dest={{ ansible_env.HOME }}/.vimrc state=link owner={{ user }}
+    - name: Linking tmux configuration
+      file: src={{ playbook_dir }}/tmux/tmux.conf dest={{ ansible_env.HOME }}/.tmux.conf state=link owner={{ user }}
+    - name: Linking git config
+      file: src={{ playbook_dir }}/git/gitconfig dest={{ ansible_env.HOME }}/.gitconfig state=link owner={{ user }}
+      file: src={{ playbook_dir }}/git/gitignore dest={{ ansible_env.HOME }}/.gitignore state=link owner={{ user }}
+    - name: Linking ctags config
+      file: src={{ playbook_dir }}/ctags/ctags dest={{ ansible_env.HOME }}/.ctags state=link owner={{ user }}
+    - name: Load OSX packages to a variable
+      include_vars: file={{ playbook_dir }}/OSX/brew_packages.yml name=packages
+    - name: Installing OSX packages
+      homebrew: name={{ item }} state=present
+      when: ansible_distribution == 'MacOSX'
+      with_items: "{{ packages.brew_packages }}"
+    - name: Installing OSX casks
+      homebrew_cask: name={{ item }} state=present
+      when: ansible_distribution == 'MacOSX'
+      with_items: "{{ packages.cask_packages }}"
+    - name: Cleanup after installing OSX packages
+      shell: |
+        brew linkapps;
+        brew cleanup;
+        brew cask cleanup;
+      when: ansible_distribution == 'MacOSX'
