@@ -17,28 +17,38 @@
       file: src={{ playbook_dir }}/tmux/tmux.conf dest={{ home }}/.tmux.conf state=link owner={{ user }}
 
     - name: Linking git config
-      file: src={{ playbook_dir }}/git/gitconfig dest={{ home }}/.gitconfig state=link owner={{ user }}
-      file: src={{ playbook_dir }}/git/gitignore dest={{ home }}/.gitignore state=link owner={{ user }}
+      file: src={{ playbook_dir }}/git/{{ item }} dest={{ home }}/.{{ item }} state=link owner={{ user }}
+      with_items:
+        - gitignore
+        - gitconfig
 
     - name: Linking ctags config
       file: src={{ playbook_dir }}/ctags/ctags dest={{ home }}/.ctags state=link owner={{ user }}
 
-    - name: Load OSX packages to a variable
-      include_vars: file={{ playbook_dir }}/OSX/brew_packages.yml name=packages
+    - name: Create local bin folder
+      file: path={{ home }}/bin state=directory
 
-    - name: Installing OSX packages
-      homebrew: name={{ item }} state=present
-      when: ansible_distribution == 'MacOSX'
-      with_items: "{{ packages.brew_packages }}"
+    - name: Copy scripts to bin directory
+      shell: cp {{ playbook_dir }}/scripts/* {{ home }}/bin
 
-    - name: Installing OSX casks
-      homebrew_cask: name={{ item }} state=present
-      when: ansible_distribution == 'MacOSX'
-      with_items: "{{ packages.cask_packages }}"
+    - name: Create go directory
+      file: path={{ home }}/go state=directory
 
-    - name: Cleanup after installing OSX packages
-      shell: |
-        brew linkapps;
-        brew cleanup;
-        brew cask cleanup;
-      when: ansible_distribution == 'MacOSX'
+    - name: Install pipsi
+      pip: name={{ item }}
+      with_items:
+        - pipsi
+
+    - name: Install python-utilities
+      shell: pipsi install {{ item }}
+      with_items:
+        - pew
+        - pipenv
+        - ipython
+        - flake8
+
+- import_playbook: ./osx_play.yml
+  when: ansible_distribution == 'MacOSX'
+
+- import_playbook: ./fedora_play.yml
+  when: ansible_distribution == 'Fedora'

@@ -1,4 +1,4 @@
-source ~/.antigen/antigen.zsh
+source ~/.antigen-src/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -21,12 +21,12 @@ antigen theme gnzh
 # Tell antigen that you're done.
 antigen apply
 
-for f in $(find ~/.dotfiles/zsh -depth 1 -name "*.zsh");
+for f in $(find ~/.dotfiles/zsh -maxdepth 1 -name "*.zsh");
 do
   source $f;
 done;
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 
 man() {
   env \
@@ -40,27 +40,8 @@ man() {
   man "$@"
 }
 
-if [ ! -d "$HOME/bin" ]
-then
-  mkdir -p "$HOME/bin"
-  cp .dotfiles/scripts/* "$HOME/bin"
-fi
-
-if [ ! -d "$HOME/go" ]
-then
-  mkdir -p "$HOME/go"
-fi
-
 export GOPATH=$HOME/go
 export PATH="${HOME}/.local/bin:${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/gettext/bin:$PATH"
-
-if ! type pipsi > /dev/null
-then
-  curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python
-  pipsi install pew pipenv ipython flake8
-fi
-
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 export HISTCONTROL=ignoreboth:erasedups;
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
