@@ -1,7 +1,7 @@
 - hosts: 127.0.0.1
   tasks:
     - name: Load OSX packages to a variable
-      include_vars: file={{ playbook_dir }}/OSX/brew_packages.yml name=packages
+      include_vars: file={{ playbook_dir }}/osx/brew_packages.yml name=packages
 
     - name: Installing OSX packages
       homebrew: name={{ item }} state=present
