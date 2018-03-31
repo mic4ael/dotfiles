@@ -69,19 +69,21 @@ cask_packages:
   - adium
   - cinch
   - etcher
-  - evernote
   - firefox
+  - google-backup-and-sync
   - garmin-express
   - google-chrome
-  - google-backup-and-sync
   - iterm2
   - java
   - libreoffice
   - mactex
   - middleclick
+  - minikube
+  - opera
   - paintbrush
   - spotify
   - the-unarchiver
+  - thunderbird-beta
   - toggldesktop
   - transmission
   - tunnelblick

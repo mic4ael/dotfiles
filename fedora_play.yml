@@ -1,1 +1,8 @@
 - hosts: 127.0.0.1
+  tasks:
+    - name: Load Fedora packages to a variable
+      include_vars: file={{ playbook_dir }}/fedora/fedora_packages.yml name=fedora_packages
+
+    - name: Installing Fedora packages
+      dnf: name={{ item }} state=present
+      with_items: "{{ fedora_packages.packages }}"
