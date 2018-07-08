@@ -1,5 +1,11 @@
 source ~/.antigen/antigen.zsh
 
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/mic4ael/.zshrc'
+
+autoload -Uz compinit && compinit
+# End of lines added by compinstall
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
