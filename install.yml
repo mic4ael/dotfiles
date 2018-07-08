@@ -1,8 +1,8 @@
 - hosts: 127.0.0.1
   connection: local
   vars:
-    - user: root
-    - home: /root
+    - user: mic4ael
+    - home: /home/mic4ael
   tasks:
     - name: Installing antigen
       git: repo=https://github.com/zsh-users/antigen.git dest={{ home }}/.antigen
