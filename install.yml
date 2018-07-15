@@ -41,6 +41,7 @@
 
     - name: Install pipsi
       pip: name={{ item }}
+      extra_args: --user
       with_items:
         - pipsi
 
