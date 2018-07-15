@@ -34,6 +34,11 @@
     - name: Create go directory
       file: path={{ home }}/go state=directory
 
+    - name: Installing python-devel package
+      dnf: name=python-devel; state=present
+      become: true
+      become_user: root
+
     - name: Install pipsi
       pip: name={{ item }}
       with_items:
