@@ -53,6 +53,16 @@ export HISTCONTROL=ignoreboth:erasedups;
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-source $(pew shell_config)
-
 alias ipython='ipython --profile=mic4ael'
+alias ipython3='ipython3 --profile=mic4ael'
+
+export PATH="/usr/local/opt/postgresql@9.6/bin:/Users/mic4ael/go/bin:$PATH"
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/mic4ael/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+source $(pew shell_config)
