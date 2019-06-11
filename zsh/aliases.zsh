@@ -3,6 +3,7 @@
 # Get operating system
 platform='unknown'
 unamestr=$(uname)
+
 if [[ $unamestr == 'Linux' ]]; then
   platform='linux'
 elif [[ $unamestr == 'Darwin' ]]; then
@@ -136,9 +137,12 @@ alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 
 alias hpr='hub pull-request'
 alias grb='git recent-branches'
 
-# Finder
-alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias ipython='ipython --profile=mic4ael'
 
-# Homebrew
-alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+if [[ $platform == 'darwin' ]]; then
+  # Finder
+  alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+  alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+  alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+fi
+

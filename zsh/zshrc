@@ -47,19 +47,16 @@ man() {
   man "$@"
 }
 
-export GOPATH=$HOME/go
-export PATH="${HOME}/.local/bin:${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/gettext/bin:$PATH"
 export HISTCONTROL=ignoreboth:erasedups;
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-alias ipython='ipython --profile=mic4ael'
-alias ipython3='ipython3 --profile=mic4ael'
-
-export PATH="/usr/local/opt/postgresql@9.6/bin:/Users/mic4ael/go/bin:$PATH"
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:${HOME}/.local/bin:${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/gettext/bin:$PATH"
+export PATH="$HOME/.cargo/bin:/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/mic4ael/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
