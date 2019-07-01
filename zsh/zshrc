@@ -52,8 +52,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:${HOME}/.local/bin:${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/gettext/bin:$PATH"
-export PATH="$HOME/.cargo/bin:/usr/local/opt/postgresql@9.6/bin:$PATH"
+export PATH="${PATH}:$GOPATH/bin:${HOME}/.local/bin:${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/gettext/bin"
+export PATH="${PATH}:$HOME/.cargo/bin:/usr/local/opt/postgresql@9.6/bin"
 
 # The following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
