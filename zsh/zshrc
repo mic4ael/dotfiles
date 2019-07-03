@@ -52,7 +52,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export GOPATH=$HOME/go
-export PATH="${PATH}:$GOPATH/bin:${HOME}/.local/bin:${HOME}/bin:/usr/local/sbin:/usr/local/bin:/usr/local/opt/gettext/bin"
+export PATH="$([ -z $VIRTUAL_ENV ] && echo '' || echo "$VIRTUAL_ENV/bin"):/usr/local/sbin:/usr/local/bin:${PATH}:$GOPATH/bin:${HOME}/.local/bin:${HOME}/bin:usr/local/opt/gettext/bin"
 export PATH="${PATH}:$HOME/.cargo/bin:/usr/local/opt/postgresql@9.6/bin"
 
 # The following lines were added by compinstall
