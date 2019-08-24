@@ -66,20 +66,23 @@ brew_packages:
   - zsh
 
 cask_packages:
-  - adium
+  - android-file-transfer
+  - android-platform-tools
+  - android-sdk
   - cinch
   - etcher
   - firefox
-  - google-backup-and-sync
   - garmin-express
   - google-chrome
   - iterm2
   - java
-  - libreoffice
+  - keepassx
   - mactex
   - middleclick
-  - minikube
+  - osxfuse
   - paintbrush
+  - qnapi
+  - signal
   - spotify
   - the-unarchiver
   - transmission
