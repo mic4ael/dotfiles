@@ -1,10 +1,13 @@
 source ~/.antigen/antigen.zsh
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/mic4ael/.zshrc'
+export HISTCONTROL=ignoreboth:erasedups;
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-autoload -Uz compinit && compinit
-# End of lines added by compinstall
+export GOPATH=$HOME/go
+export PATH="$([ -z $VIRTUAL_ENV ] && echo '' || echo "$VIRTUAL_ENV/bin"):/usr/local/sbin:/usr/local/bin:${PATH}:$GOPATH/bin:${HOME}/.local/bin:${HOME}/bin:usr/local/opt/gettext/bin"
+export PATH="${PATH}:$HOME/.cargo/bin:/usr/local/opt/postgresql@9.6/bin:$HOME/Library/Python/2.7/bin"
+export ANDROID_SDK_ROOT='/usr/local/share/android-sdk'
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -47,19 +50,12 @@ man() {
   man "$@"
 }
 
-export HISTCONTROL=ignoreboth:erasedups;
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-export GOPATH=$HOME/go
-export PATH="$([ -z $VIRTUAL_ENV ] && echo '' || echo "$VIRTUAL_ENV/bin"):/usr/local/sbin:/usr/local/bin:${PATH}:$GOPATH/bin:${HOME}/.local/bin:${HOME}/bin:usr/local/opt/gettext/bin"
-export PATH="${PATH}:$HOME/.cargo/bin:/usr/local/opt/postgresql@9.6/bin"
-
 # The following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
-
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
 source $(pew shell_config)
+
+eval "$(jenv init -)"
