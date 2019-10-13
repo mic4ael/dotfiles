@@ -78,7 +78,6 @@ cask_packages:
   - java
   - keepassx
   - mactex
-  - middleclick
   - osxfuse
   - paintbrush
   - qnapi
@@ -90,3 +89,4 @@ cask_packages:
   - visual-studio-code
   - vlc
   - wireshark
+  - xquartz
