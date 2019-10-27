@@ -4,9 +4,10 @@ export HISTCONTROL=ignoreboth:erasedups;
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export GOPATH=$HOME/go
 export PATH="$([ -z $VIRTUAL_ENV ] && echo '' || echo "$VIRTUAL_ENV/bin"):/usr/local/sbin:/usr/local/bin:${PATH}:$GOPATH/bin:${HOME}/.local/bin:${HOME}/bin:usr/local/opt/gettext/bin"
 export PATH="${PATH}:$HOME/.cargo/bin:/usr/local/opt/postgresql@9.6/bin:$HOME/Library/Python/2.7/bin"
+export GOPATH=$HOME/go
+export GOROOT=$(go env GOROOT)
 export ANDROID_SDK_ROOT='/usr/local/share/android-sdk'
 
 # Load the oh-my-zsh's library.
@@ -31,10 +32,7 @@ antigen theme gnzh
 # Tell antigen that you're done.
 antigen apply
 
-for f in $(find ~/.dotfiles/zsh -maxdepth 1 -name "*.zsh");
-do
-  source $f;
-done;
+source ~/.dotfiles/zsh/*.zsh
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 
@@ -59,3 +57,5 @@ compinit
 source $(pew shell_config)
 
 eval "$(jenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
