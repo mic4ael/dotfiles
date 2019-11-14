@@ -1,66 +1,88 @@
 brew_packages:
-  - asciinema
   - adwaita-icon-theme
-  - asciinema2gif
+  - asciidoctor
+  - automake
+  - bat
   - boost
   - cloc
   - cloog
+  - cmake
+  - cocoapods
   - ctags
   - curl
+  - dep
   - dirmngr
+  - elixir
+  - enchant
   - exercism
+  - fd
   - flex
   - fortune
+  - fzf
+  - ghostscript
+  - gifsicle
   - git
   - gnupg
+  - gobject-introspection
   - gpg-agent
   - gtk+
+  - gtk+3
+  - help2man
   - htop
   - httpie
+  - imagemagick
+  - isl
+  - isl@0.12
+  - jenv
+  - kubernetes-cli
   - libcaca
   - libgphoto2
   - libicns
   - libidn
+  - libmpc
   - libmpc@0.8
   - libotr
+  - libsoup
   - libxml2
-  - libyaml
-  - libzip
-  - little-cms2
+  - luajit
   - macvim
+  - makedepend
   - mcrypt
   - mercurial
   - midnight-commander
+  - nasm
+  - ncdu
   - netcat
   - nmap
   - node
   - openvpn
-  - perl
   - pidof
+  - pipx
   - portmidi
-  - postgresql@9.6
+  - pstree
+  - psutils
   - pv
-  - pyenv-virtualenvwrapper
-  - python
-  - python3
+  - pyenv
   - reattach-to-user-namespace
-  - redis
   - ripgrep
   - sane-backends
-  - sdl2
   - sdl_image
   - sdl_mixer
   - sdl_ttf
-  - shared-mime-info
+  - socat
+  - speedtest-cli
+  - sphinx-doc
   - ssh-copy-id
-  - the_silver_searcher
+  - sshfs
+  - tcpkali
   - tig
+  - tldr
   - tmux
   - tree
   - unixodbc
   - unrar
   - utf8proc
-  - webkitgtk
+  - watchman
   - weechat
   - wget
   - zsh
@@ -78,6 +100,7 @@ cask_packages:
   - java
   - keepassx
   - mactex
+  - midclick
   - osxfuse
   - paintbrush
   - qnapi

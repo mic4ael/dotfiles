@@ -39,17 +39,10 @@
       become: true
       become_user: root
 
-    - name: Install pipsi
-      pip: name={{ item }}
-      extra_args: --user
-      with_items:
-        - pipsi
-
     - name: Install python-utilities
-      shell: pipsi install {{ item }}
+      shell: pipx install {{ item }}
       with_items:
-        - pew
-        - pipenv
+        - poetry
         - ipython
         - flake8
 

@@ -54,8 +54,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-source $(pew shell_config)
-
 eval "$(jenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
