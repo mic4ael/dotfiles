@@ -42,6 +42,7 @@
     - name: Install python-utilities
       shell: pipx install {{ item }}
       with_items:
+        - pew
         - poetry
         - ipython
         - flake8
