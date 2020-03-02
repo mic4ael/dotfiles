@@ -95,6 +95,7 @@ cask_packages:
   - etcher
   - firefox
   - garmin-express
+  - gimp
   - google-chrome
   - iterm2
   - java
