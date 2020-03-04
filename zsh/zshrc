@@ -4,11 +4,27 @@ export HISTCONTROL=ignoreboth:erasedups;
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export PATH="$([ -z $VIRTUAL_ENV ] && echo '' || echo "$VIRTUAL_ENV/bin"):/usr/local/sbin:/usr/local/bin:${PATH}:$GOPATH/bin:${HOME}/.local/bin:${HOME}/bin:usr/local/opt/gettext/bin"
-export PATH="${PATH}:$HOME/.cargo/bin:/usr/local/opt/postgresql@9.6/bin:$HOME/Library/Python/2.7/bin"
+# Modify PATH - add brew binaries
+export PATH=$PATH:/usr/local/bin
+
+# Modify PATH - add local bin folder
+export PATH=$PATH:$HOME/bin
+
+# Modify PATH - add folder with go binaries
+export PATH=$PATH:$GOPATH/bin
+
+# Modify Path - add .local bin folder
+export PATH=$PATH:$HOME/.local/bin
+
+# Modify PATH - add rust binaries
+export PATH=$PATH:$HOME/.cargo/bin
+
+# Change autosuggest background color
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
+
+# Export Go-related variables
 export GOPATH=$HOME/go
 export GOROOT=$(go env GOROOT)
-export ANDROID_SDK_ROOT='/usr/local/share/android-sdk'
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -34,8 +50,7 @@ antigen apply
 
 source ~/.dotfiles/zsh/*.zsh
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
-
+# Make manpages colored
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
