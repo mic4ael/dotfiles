@@ -7,6 +7,10 @@ export LANG=en_US.UTF-8
 # Modify PATH - add brew binaries
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+# Export Go-related variables
+export GOPATH=$HOME/go
+export GOROOT=$(go env GOROOT)
+
 # Modify PATH - add local bin folder
 export PATH=$PATH:$HOME/bin
 
@@ -21,10 +25,6 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 # Change autosuggest background color
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
-
-# Export Go-related variables
-export GOPATH=$HOME/go
-export GOROOT=$(go env GOROOT)
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -69,3 +69,5 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+source $(pew shell_config)
