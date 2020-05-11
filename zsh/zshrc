@@ -36,12 +36,16 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
+antigen bundle Aloxaf/fzf-tab
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle peterhurford/git-aliases.zsh
+
+# Misc
+antigen bundle ael-code/zsh-colored-man-pages
 
 # Load the theme.
 antigen theme gnzh
@@ -50,19 +54,6 @@ antigen theme gnzh
 antigen apply
 
 source ~/.dotfiles/zsh/*.zsh
-
-# Make manpages colored
-man() {
-  env \
-    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-    LESS_TERMCAP_md=$(printf "\e[1;31m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;32m") \
-  man "$@"
-}
 
 # The following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
