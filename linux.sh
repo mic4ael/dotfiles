@@ -2,7 +2,7 @@
 
 prepare() {
   sudo dnf -y update
-  sudo dnf install -y python-devel git zsh golang fzf
+  sudo dnf install -y python-devel git zsh golang fzf tmux
 
   curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
   curl https://bootstrap.pypa.io/get-pip.py | python3
@@ -11,5 +11,5 @@ prepare() {
 }
 
 finish() {
-  sudo dnf install -y fd-find bat ripgrep
+  sudo dnf install -y fd-find bat ripgrep htop httpie jq tig weechat
 }
