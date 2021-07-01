@@ -129,7 +129,7 @@
 [include]
     path = .gitconfig.user
 [user]
-    email = crossner90@gmail.com
+    email = <email>
     name = mic4ael
 [rebase]
     autosquash = true
